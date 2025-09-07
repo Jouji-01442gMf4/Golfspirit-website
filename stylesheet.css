@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    background: none;
+    color: #e1eae3;
+    line-height: 1.6;
+}
+
+/* Background */
+#background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* Header, main tab*/
+.header {
+    width: 100%;
+    background-color: #1d2b20;
+    border-bottom: 2px solid #2a6f41;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    padding: 10px 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: #f6fff9;
+    font-style: italic;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #d1e7d8;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.2s ease-in-out;
+}
+
+.nav a:hover,
+.nav a:focus {
+    background-color: #4ae58b;
+    color: #0f1913;
+}
+
+/* Main Content */
+.main {
+    width: 85%;
+    background-color: #1a2a1e;
+    border-left: 3px solid #4ae58b;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    margin: 50px auto;
+}
+
+.main h3 {
+    color: #7ddfa4;
+    margin: 20px 0 10px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #2a6f41;
+    padding-bottom: 4px;
+}
+
+.main p {
+    font-size: 1rem;
+    margin-bottom: 16px;
+    color: #c9d9ce;
+}
+
+/* Information Box */
+.information {
+    background-color: #223b2b;
+    border-left: 3px solid #4ae58b;
+    padding: 20px;
+    margin: 24px 0;
+    border-radius: 10px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.15);
+}
+
+/* Photo Scroll */
+.scroll-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 32px 0;
+}
+
+.box-photos {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 16px;
+    padding: 8px;
+    border-radius: 8px;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding: 8px;
+}
+
+.box-photos img {
+    max-height: 260px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.scroll-btn {
+    background-color: #2a6f41;
+    color: #ffffff;
+    border: none;
+    font-size: 1.6rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.scroll-btn:hover {
+    background-color: #4ae58b;
+    color: #0f1913;
+}
+
+/* Scrollbar */
+.box-photos::-webkit-scrollbar {
+    height: 6px;
+}
+.box-photos::-webkit-scrollbar-thumb {
+    background-color: #4ae58b;
+    border-radius: 3px;
+}
+
+/* Offer Section */
+.Offer {
+    background-color: #223b2b;
+    padding: 24px;
+    border-radius: 10px;
+    border-left: 3px solid #4ae58b;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 32px;
+}
+
+/* Contact Section */
+.Contact {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #1a2a1e;
+    border-top: 3px solid #4ae58b;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.25);
+    padding: 24px;
+}
+
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+a {
+    color: #4ae58b;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive for photos used */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .logo {
+        max-width: 70px;
+    }
+
+    .main {
+        width: 95%;
+        margin-top: 30px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .scroll-wrapper {
+        flex-direction: column;
+        overflow: visible;
+    }
+}
+
