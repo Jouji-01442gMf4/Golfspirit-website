@@ -1,45 +1,51 @@
-// Edits to change the background image, made on canvas. Image is called golfspirit-5.png path is image folder. 
+const gallery = document.getElementById('galleryScroll');
+const wrapper = document.getElementById('galleryWrapper');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
 
+// Duplicate images to allow continuous scrolling
+gallery.innerHTML += gallery.innerHTML;
 
-// Also adds ability to scroll photos, from left to right to showcase them.
-function scrollPhotos(direction) {
-    const container = document.getElementById('photoScroll');
-    const img = container.querySelector('img');
-    const style = getComputedStyle(container);
-    const gap = parseInt(style.gap) || 0;
-    const scrollAmount = img.offsetWidth + gap;
+let speed = 0.5; // scroll speed
+let paused = false;
 
-    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+function animateScroll() {
+    if (!paused) {
+        gallery.scrollLeft += speed;
+        // Reset to start seamlessly
+        if (gallery.scrollLeft >= gallery.scrollWidth / 2) {
+            gallery.scrollLeft = 0;
+        }
+    }
+    requestAnimationFrame(animateScroll);
 }
+animateScroll();
 
-const canvas = document.getElementById("background-img");
-const ctx = canvas.getContext("2d");
+// Pause on hover
+wrapper.addEventListener('mouseenter', () => paused = true);
+wrapper.addEventListener('mouseleave', () => paused = false);
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    drawBackground();
-}
+// Click to open fullscreen
+gallery.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+    });
+});
 
-const img = new Image();
-img.src = "img/golfspirit-5.png";
-img.onload = () => {
-    resizeCanvas();
-};
+// Click to close fullscreen
+lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
 
-function drawBackground() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+let lang = window.navigator.languages ? window.navigator.languages[0] : null;
+lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
 
-    // Draw the image slightly larger to cover blur edge artifacts
-    const overshoot = 40; // pixels to extend beyond canvas edge
-    ctx.filter = "blur(11px) brightness(0.8)";
-    ctx.drawImage(
-        img,
-        -overshoot, -overshoot,
-        canvas.width + overshoot * 2,
-        canvas.height + overshoot * 2
-    );
-    ctx.filter = "none";
-}
+let shortLang = lang;
+if (shortLang.indexOf('-') !== -1)
+    shortLang = shortLang.split('-')[0];
 
-window.addEventListener("resize", resizeCanvas);
+if (shortLang.indexOf('_') !== -1)
+    shortLang = shortLang.split('_')[0];
+
+console.log(lang, shortLang);
