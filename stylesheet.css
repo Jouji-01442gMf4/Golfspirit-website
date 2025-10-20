@@ -220,10 +220,38 @@ body::after{
 .gallery {
     width: 100%;
     max-width: 100%;
-    padding: 3rem 1rem;
+    padding: 3rem 2rem;
     margin: 0 auto;
     background: var(--bg-end);
 }
+
+#gallery-heading {
+    display: inline-block;
+    background: white;
+    color: var(--text-dark, #275010);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 auto 1rem auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Center title card and paragraph */
+#gallery {
+    text-align: center;
+    position: relative;
+}
+
+#gallery p.muted {
+    color: var(--text-muted, #555);
+    max-width: 600px;
+    margin: 0.5rem auto 2rem auto;
+    font-size: 1rem;
+}
+
 
 .gallery-grid {
     display: grid;
