@@ -1,7 +1,4 @@
-/* simplified, more playful stylesheet (updated: darker theme + navbar + image area)
-   Fixed selector mismatches and added a dynamic dark-mode-first theme with smoother transitions */
 
-/* Theme: base (light fallback) */
 :root{
     --bg-start: #e6f2e8;
     --bg-end: #d9edd6;
@@ -28,11 +25,11 @@
         --bg-start: #07140b;
         --bg-end: #062114;
         --accent-a: #1fc67a;
-        --accent-b: #0fb26b;
+        --accent-b: #0b8a53;
         --muted: #3f8058;
         --glass: rgba(255,255,255,0.04);
 
-        --text: #41c272;
+        --text: #0c863b;
         --card-bg: linear-gradient(180deg, rgba(12,22,18,0.55), rgba(9,18,14,0.35));
         --card-shadow: 0 14px 40px rgba(2,8,4,0.55);
 
@@ -40,8 +37,16 @@
     }
 }
 
+
+iframe {
+    display: flex;
+    position: flex;
+    width: 40vh;
+    height: 60vh;
+}
+
 /* Reset */
-*{box-sizing:border-box}
+* {box-sizing:border-box}
 html,body{height:100%}
 html{background:radial-gradient(1200px 600px at 10% 10%, rgba(31,122,51,0.06), transparent 10%), radial-gradient(900px 400px at 95% 90%, rgba(27,170,90,0.04), transparent 10%);}
 body{
@@ -56,40 +61,29 @@ body{
     padding-bottom:96px;
     padding-top: calc(var(--nav-h) + 8px); /* make room for fixed navbar */
     transition: background var(--anim), color var(--anim);
+    background-color: #fff;
 }
 
-/* floating playful blobs behind content (subtle on dark) */
-body::before, body::after{
-    content:"";
-    position:fixed;
-    z-index:-2;
-    filter: blur(50px);
-    opacity:0.12;
-    pointer-events:none;
-}
-body::before{
-    width:640px;height:640px;left:-140px;top:8%;
-    background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--accent-b) 70%, transparent), transparent 45%);
-}
-body::after{
-    width:520px;height:520px;right:-100px;bottom:6%;
-    background: radial-gradient(circle at 70% 70%, color-mix(in srgb, var(--accent-a) 70%, transparent), transparent 40%);
-    transform: rotate(12deg);
+a { 
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .nav {
     position: fixed;
+    display: flex;
+    justify-content: center;
     top: 0.5rem;
     left: 50%;
+    width: 100%;
     transform: translateX(-50%);
     background: rgba(59, 59, 59, 0.15);
-    /* Semi-transparent */
     backdrop-filter: blur(10px);
-    /* Frosted glass effect */
     -webkit-backdrop-filter: blur(10px);
-    /* Safari support */
     border-radius: 16px;
-    padding: 12px 24px;
+    padding: 1.6rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     z-index: 1000;
 }
@@ -97,17 +91,19 @@ body::after{
 .nav ul {
     list-style: none;
     display: flex;
-    gap: 24px;
+    gap: 1rem;
     margin: 0;
     padding: 0;
-    align-items: center;
+    justify-content: center;
 }
 
 .nav a {
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     color: #4cb85a;
     font-weight: 500;
-    padding: 1rem 1.5rem;
+    margin: 1rem;
     transition: background 0.3s, color 0.3s;
     border-radius: 8px;
 }
@@ -117,7 +113,7 @@ body::after{
     color: #fff;
 }
 
-/* Primary Button Styling */
+
 .nav a.btn.primary {
     background: linear-gradient(135deg, #47d85a 0%, #126941 100%);
     color: #fff;
@@ -132,63 +128,45 @@ body::after{
     box-shadow: 0 4px 20px rgba(0, 242, 254, 0.4);
 } 
 
-/* container */
+
 .container{
-    width:min(var(--max-w), 96%);
-    margin:3rem auto;
+    margin:3rem;
     padding:0 18px;
     transition: padding .2s;
 }
 
-/* Hero */
-.hero {
-    min-height: 78vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 3rem 0;
-    overflow: hidden;
-}
 
-/* decorative canvas */
-.hero-canvas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background: linear-gradient(180deg, rgba(11, 107, 46, 0.06), rgba(11, 107, 46, 0.01));
-    pointer-events:none;
-}
 
 .hero-content {
     position: relative;
-    z-index: 1;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    z-index: 1;
+    flex-direction: row;
     gap: 1.25rem;
-    align-items: flex-start;
-    padding: 2rem;
+    align-items: center;
     background: var(--card-bg);
     border-radius: 12px;
-    max-width: 80rem;
-    margin: 0 auto;
-    width: 100%;
+    margin:  auto;
+    width: 60%;
     box-shadow: var(--card-shadow);
     transition: background var(--anim), box-shadow var(--anim), transform var(--anim);
 }
 
 .hero-top {
     display: flex;
-    gap: 1.5rem;
+    position: flex;
+    gap: 1rem;
     align-items: center;
     width: 100%;
 }
 
 .hero-brand img {
-    width: 40rem;
+    width: 10rem;
     height: auto;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     border-radius: 8px;
     box-shadow: 0 12px 40px rgba(0,0,0,0.2);
 }
@@ -205,25 +183,7 @@ body::after{
     font-weight: 800;
 }
 
-.hero-lede {
-    margin: 0;
-    color: var(--muted);
-}
 
-.hero-ctas {
-    display: flex;
-    gap: .75rem;
-    margin-top: .75rem;
-}
-
-/* Gallery */
-.gallery {
-    width: 100%;
-    max-width: 100%;
-    padding: 3rem 2rem;
-    margin: 0 auto;
-    background: var(--bg-end);
-}
 
 #gallery-heading {
     display: inline-block;
@@ -239,7 +199,7 @@ body::after{
     z-index: 2;
 }
 
-/* Center title card and paragraph */
+
 #gallery {
     text-align: center;
     position: relative;
@@ -247,7 +207,7 @@ body::after{
 
 #gallery p.muted {
     color: var(--text-muted, #555);
-    max-width: 600px;
+    max-width: 700px;
     margin: 0.5rem auto 2rem auto;
     font-size: 1rem;
 }
@@ -265,7 +225,7 @@ body::after{
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     aspect-ratio: 4 / 3;
-    /* Keeps all images same shape */
+
 }
 
 .gallery-grid img {
@@ -335,7 +295,7 @@ body::after{
     display: flex;
 }
 
-/* Responsive hero layout */
+
 @media(min-width: 32em) {
     .hero-content {
         flex-direction: row;
@@ -356,7 +316,7 @@ body::after{
     }
 }
 
-/* Cards */
+
 .card-grid{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
