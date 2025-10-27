@@ -74,7 +74,7 @@ body {
 }
 
 a {
-
+    
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -144,7 +144,9 @@ a {
     transition: padding .2s;
 }
 
-
+.hero-bar {
+    padding: 0.3rem;
+}
 
 .hero-content {
     position: relative;
@@ -171,7 +173,6 @@ a {
 }
 
 .hero-brand img {
-    width: 10rem;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -333,33 +334,6 @@ a {
     margin-top: 24px;
 }
 
-.card {
-    position: relative;
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    padding: 18px;
-    min-height: 120px;
-    overflow: hidden;
-    transition: transform .45s var(--anim), box-shadow .45s var(--anim);
-    box-shadow: var(--card-shadow);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(6px) saturate(1.02);
-}
-
-.card::before {
-    /* diagonal color streak for flair */
-    content: "";
-    position: absolute;
-    right: -40%;
-    top: -30%;
-    width: 180%;
-    height: 120%;
-    transform: rotate(18deg);
-    background: linear-gradient(90deg, color-mix(in srgb, var(--accent-b) 14%, transparent), color-mix(in srgb, var(--accent-a) 8%, transparent));
-    pointer-events: none;
-    transition: opacity .4s;
-    opacity: 0.85;
-}
 
 .card:hover {
     transform: translateY(-8px);
@@ -386,7 +360,7 @@ a {
     font-size: 0.96rem
 }
 
-/* small image area in cards */
+
 .card .thumb {
     width: 72px;
     height: 72px;
@@ -397,43 +371,6 @@ a {
     display: inline-block;
 }
 
-/* button */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
-    color: white;
-    border: 0;
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 700;
-    box-shadow: 0 10px 28px rgba(20, 80, 38, 0.16);
-    transition: transform .18s linear, box-shadow .18s linear, filter .18s linear;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-    mix-blend-mode: overlay;
-    pointer-events: none;
-}
-
-.btn:active {
-    transform: translateY(1px)
-}
-
-.btn:focus {
-    outline: 3px solid rgba(31, 190, 120, 0.12);
-    outline-offset: 4px
-}
-
-/* floating scroll/cta button */
 .fab {
     position: fixed;
     left: 22px;

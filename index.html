@@ -17,16 +17,11 @@
 </head>
 
 <body>
-    <header class="site-header" role="banner">
-        <div class="container header-inner">
-            <a class="brand" href="#hero" aria-label="Golfspirit home">
-            </a>
-
             <nav class="nav">
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#offer">Offer</a></li>
-                    <li><a href="#information">Location</a></li>
+                    <li><a href="#gallery">About</a></li>
+                    <li><a href="#about">Offer</a></li>
+                    <li><a href="#offer">Location</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -35,29 +30,23 @@
 
     <main>
 
-        <section id="hero" aria-labelledby="hero-heading">
+<section id="hero" aria-labelledby="hero-heading">
 
-            <div class="hero-content container" aria-labelledby="hero-heading">
+    <div class="hero-bar" aria-labelledby="hero-heading">
+        <div class="hero-brand" aria-hidden="false">
+            <img src="img/ogar-golf.png" alt="Golfspirit logo" />
+        </div>
 
-                
-                    <div class="hero-brand" aria-hidden="false">
-                        <img src="img/ogar-golf.png" alt="Golfspirit logo" />
-                    </div>
+        <div class="hero-title">
+            <h1 id="hero-heading">Golfspirit — Golf for everyone in Amsterdam-Zuidoost</h1>
+            <p class="intro">
+                OGAR Golfspirit is a nonprofit committed to removing barriers so people of<br> all ages and abilities can enjoy golf.
+                Outdoor lessons, accessible facilities, and community programs.
+            </p>
+        </div>
+    </div>
+</section>
 
-                    <div class="hero-title">
-                        <h1 id="hero-heading">Golfspirit — Golf for everyone in Amsterdam-Zuidoost</h1>
-                        <p class="hero-lede lede">
-                            OGAR Golfspirit is a nonprofit committed to removing barriers so people of all ages and abilities can enjoy golf.
-                            Outdoor lessons, accessible facilities, and community programs.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Optional supplementary text or badges could go here -->
-            </div>
-        </section>
-
-        <!-- IMAGE GALLERY: space for 7 golf-related images -->
     <section id="gallery" aria-labelledby="gallery-heading">
         <h2 id="gallery-heading">Gallery</h2>
     
@@ -82,7 +71,7 @@
             <h2 id="about-heading">About Golf</h2>
             <p>
                 Golf is a low-impact, inclusive sport suitable for beginners, children, seniors, and people with limited mobility.
-                It promotes balance, coordination, concentration and social connection. Golfspirit runs adapted lessons, community
+                <br> It promotes balance, coordination, concentration and social connection. <br> Golfspirit runs adapted lessons, community
                 meetups and introductory trial sessions so new members can experience the sport before committing.
             </p>
 
@@ -92,13 +81,13 @@
             </ul>
         </section>
 
-        <!-- OFFER / SCHEDULE -->
+
         <section id="offer" class="box container" aria-labelledby="offer-heading">
             <h2 id="offer-heading">The Offer</h2>
 
             <p>
-                Lessons run at fixed times during the week (Wednesday afternoon and Saturday), with flexible scheduling on request.
-                New students can observe and take free trial lessons as part of the introduction program.
+                Lessons run at fixed times on a weekly schedule (Wednesday afternoon and Saturday), with flexible scheduling on request.
+                <br> New students can observe and take free trial lessons as part of the introduction program.
             </p>
 
             <h3>Weekly schedule</h3>
@@ -121,7 +110,6 @@
             visit.</p>
         </section>
 
-        <!-- LOCATION / INFORMATION -->
         <section id="information" class="box container" aria-labelledby="info-heading">
             <h2 id="info-heading">Location & Accessibility</h2>
 
@@ -130,9 +118,7 @@
                 public transport (Kraaiennest metro) or car. Nearby parks like Nelson Mandela Park provide green space for practice.
             </p>
 
-            <!-- Placeholder for embedded map -->
-            <div class="map-placeholder" aria-hidden="true">
-                <!-- Replace with an embedded Google Maps iframe or static map image -->
+            <div class="map-placeholder">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2438.9140755703797!2d4.97267577701596!3d52.31756165119741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c60c6d0ce34855%3A0xce83d3f56d5cda96!2sStichting%20K-Zone%20Sports!5e0!3m2!1sen!2snl!4v1760796097166!5m2!1sen!2snl"
                      style="border:0;" allowfullscreen="" loading="lazy"
@@ -141,7 +127,6 @@
         </section>
 
 
-        <!-- CONTACT -->
         <section id="contact" class="box container" aria-labelledby="contact-heading">
             <h2 id="contact-heading">Contact</h2>
             <p>Email: <a href="mailto:golfspirit@gmail.com">golfspirit@gmail.com</a></p>
