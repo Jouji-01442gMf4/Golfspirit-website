@@ -48,6 +48,7 @@ body {
     min-height: 100vh;
     height: auto;
     background: #fff;
+    overflow-x: hidden;
 }
 
 
@@ -72,9 +73,8 @@ body {
     position: fixed;
     display: flex;
     justify-content: center;
+    left: 47rem;
     top: 0.5rem;
-    left: 50%;
-    width: 100%;
     transform: translateX(-50%);
     background: rgba(59, 59, 59, 0.15);
     backdrop-filter: blur(10px);
