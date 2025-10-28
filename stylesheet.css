@@ -80,8 +80,7 @@ body {
     align-items: center;
     padding: 0.5rem 1rem;
     box-sizing: border-box;
-    background: rgba(59, 59, 59, 0.5);
-    /* increase alpha slightly */
+    background: rgba(59, 59, 59, 0.3);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 16px;
@@ -89,7 +88,6 @@ body {
     flex-wrap: wrap;
     z-index: 9999;
     will-change: transform, opacity;
-    /* hint for GPU rendering */
 }
 
 .nav ul {
