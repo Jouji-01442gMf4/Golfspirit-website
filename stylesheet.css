@@ -34,8 +34,8 @@
 
 
 iframe {
-    width: 40vh;
-    height: 60vh;
+    width: 50vh;
+    height: 80vh;
 }
 
 /* Reset */
@@ -71,16 +71,20 @@ body {
 
 .nav {
     position: fixed;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    left: 47rem;
-    top: 0.5rem;
-    transform: translateX(-50%);
+    align-items: center;
+    width: calc(100% - 2rem);
+    max-width: 100vw;
     background: rgba(59, 59, 59, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 16px;
-    padding: 0.4rem;
+    padding: 0.4rem 1rem;
+    box-sizing: border-box;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     z-index: 1000;
 }
@@ -160,10 +164,14 @@ body {
 
 .hero img {
 
-    height: 13rem;
+    height: 14rem;
     padding: 0.6rem;
     border-radius: 18px;
     display: block;
+    max-width: clamp(100px, 30vw, 180px);
+    height: auto;
+    flex-shrink: 1;
+
 }
 
 
