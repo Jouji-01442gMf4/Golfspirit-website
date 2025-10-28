@@ -74,30 +74,24 @@ body {
     top: 0.5rem;
     left: 0;
     right: 0;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100vw;
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1rem;
     box-sizing: border-box;
     background: rgba(59, 59, 59, 0.15);
+    z-index: 9999;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    z-index: 1000;
-    flex-wrap: wrap;
-    
 }
 
 .nav ul {
-    list-style: none;
     display: flex;
     gap: 1rem;
+    list-style: none;
     margin: 0;
     padding: 0;
-    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .nav a {
