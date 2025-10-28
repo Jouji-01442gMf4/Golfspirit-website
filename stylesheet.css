@@ -160,9 +160,10 @@ body {
 
 .hero img {
 
-    height: 14rem;
+    height: 13rem;
     padding: 0.6rem;
     border-radius: 18px;
+    display: block;
 }
 
 
@@ -298,8 +299,6 @@ body {
         margin-top: 0;
     }
 }
-
-
 
 
 /* small details */
